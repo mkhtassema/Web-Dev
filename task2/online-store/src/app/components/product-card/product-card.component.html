@@ -1,0 +1,33 @@
+<div class="card">
+
+  <!-- Главная картинка -->
+  <img class="main-img" [src]="selectedImage" alt="{{product.name}}" />
+
+  <!-- Галерея миниатюр -->
+  <div class="gallery">
+    <img
+      *ngFor="let img of product.images"
+      [src]="img"
+      (click)="selectImage(img)"
+      [class.selected]="img === selectedImage"
+    />
+  </div>
+
+  <h3>{{ product.name }}</h3>
+  <p>{{ product.description }}</p>
+  <p class="price">{{ product.price }} ₸</p>
+
+  <div class="rating">
+    <span *ngFor="let star of [1,2,3,4,5]">
+      {{ star <= product.rating ? '★' : '☆' }}
+    </span>
+  </div>
+
+  <a [href]="product.link" target="_blank">View on Kaspi</a>
+
+  <div class="btns">
+    <button (click)="shareTelegram(product)">Telegram</button>
+    <button (click)="shareWhatsApp(product)">WhatsApp</button>
+  </div>
+
+</div>
