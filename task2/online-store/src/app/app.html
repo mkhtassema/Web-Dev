@@ -1,1 +1,18 @@
-<app-product-list></app-product-list>
+<h1>Online Store</h1>
+
+<div class="categories">
+  @for (c of categories; track c.id) {
+    <button (click)="selectCategory(c.id)">
+      {{ c.name }}
+    </button>
+  }
+</div>
+
+@if (selectedCategoryId === null) {
+  <p>Select category</p>
+} @else {
+  <app-product-list
+    [products]="filteredProducts"
+    (deleteProduct)="handleDelete($event)">
+  </app-product-list>
+}

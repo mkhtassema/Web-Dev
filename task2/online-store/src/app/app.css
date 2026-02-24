@@ -1,0 +1,14 @@
+.categories {
+  margin-bottom: 20px;
+}
+
+.categories button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.categories button.active {
+  background-color: black;
+  color: white;
+}

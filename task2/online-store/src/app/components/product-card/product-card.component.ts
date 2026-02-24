@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
 
@@ -6,31 +6,30 @@ import { Product } from '../../models/product.model';
   selector: 'app-product-card',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './product-card.component.html',
-  styleUrl: './product-card.component.css'
+  templateUrl: './product-card.component.html'
 })
-export class ProductCardComponent implements OnInit {
+export class ProductCardComponent {
 
   @Input() product!: Product;
-  selectedImage!: string;
 
-  ngOnInit(): void {
-    this.selectedImage = this.product.images[0];
+  @Output() delete = new EventEmitter<number>();
+
+  like() {
+    this.product.likes++;
   }
 
-  selectImage(img: string): void {
-    this.selectedImage = img;
+  remove() {
+    this.delete.emit(this.product.id);
   }
 
-  shareTelegram(product: Product): void {
-    const url = encodeURIComponent(product.link);
-    const text = encodeURIComponent(product.name);
-    window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
+  shareWhatsApp() {
+    const text = `Check this product: ${this.product.name} ${this.product.link}`;
+    const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
   }
 
-  shareWhatsApp(product: Product): void {
-    const text = encodeURIComponent(`Check this product: ${product.link}`);
-    window.open(`https://wa.me/?text=${text}`, '_blank');
+  shareTelegram() {
+    const url = `https://t.me/share/url?url=${encodeURIComponent(this.product.link)}&text=${encodeURIComponent(this.product.name)}`;
+      window.open(url, '_blank');
   }
-
 }

@@ -1,33 +1,35 @@
 <div class="card">
 
-  <!-- Главная картинка -->
-  <img class="main-img" [src]="selectedImage" alt="{{product.name}}" />
-
-  <!-- Галерея миниатюр -->
-  <div class="gallery">
-    <img
-      *ngFor="let img of product.images"
-      [src]="img"
-      (click)="selectImage(img)"
-      [class.selected]="img === selectedImage"
-    />
-  </div>
+  <a [href]="product.link" target="_blank">
+    <img [src]="product.image" [alt]="product.name" width="200">
+  </a>
 
   <h3>{{ product.name }}</h3>
-  <p>{{ product.description }}</p>
-  <p class="price">{{ product.price }} ₸</p>
 
-  <div class="rating">
-    <span *ngFor="let star of [1,2,3,4,5]">
-      {{ star <= product.rating ? '★' : '☆' }}
-    </span>
+  <p>{{ product.description }}</p>
+
+  <p><strong>{{ product.price }} ₸</strong></p>
+
+  <p>⭐ {{ product.rating }}</p>
+
+  <div class="buttons">
+    <button (click)="like()">
+      ❤️ Like ({{ product.likes }})
+    </button>
+
+    <button (click)="remove()">
+      🗑 Delete
+    </button>
   </div>
 
-  <a [href]="product.link" target="_blank">View on Kaspi</a>
+  <div class="share">
+    <button (click)="shareWhatsApp()">
+      WhatsApp
+    </button>
 
-  <div class="btns">
-    <button (click)="shareTelegram(product)">Telegram</button>
-    <button (click)="shareWhatsApp(product)">WhatsApp</button>
+    <button (click)="shareTelegram()">
+      Telegram
+    </button>
   </div>
 
 </div>
