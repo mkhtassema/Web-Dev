@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f6f8fa;
+    color: #24292f;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.dark-btn {
+    background: #24292f;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.light-btn {
+    background: white;
+    border: 1px solid #d0d7de;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.plans {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.plan {
+    background: white;
+    width: 320px;
+    padding: 25px;
+    border: 1px solid #d0d7de;
+    border-radius: 12px;
+}
+
+.enterprise {
+    border: 2px solid #0969da;
+}
+
+.desc {
+    color: #57606a;
+    font-size: 14px;
+}
+
+.price {
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.price span {
+    font-size: 14px;
+    color: #57606a;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.features li {
+    padding: 8px 0;
+    border-top: 1px solid #d0d7de;
+    font-size: 14px;
+}
+
+.features li::before {
+    content: "› ";
+    color: #57606a;
+}
+
+.addon-title {
+    font-size: 12px;
+    color: #0969da;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.included {
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.btn-row {
+    display: flex;
+    gap: 10px;
+}
+
+.addons {
+    padding: 60px 20px;
+}
+
+.addons h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.addons-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.addon-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #d0d7de;
+}
+.addon-card h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.addon-card p {
+    font-size: 14px;
+    color: #57606a;
+    margin: 10px 0 15px;
+}
+
+.addon-card a {
+    font-size: 14px;
+    color: #0969da;
+    text-decoration: none;
+}
+
+.addon-card a:hover {
+    text-decoration: underline;
+}
+.addons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.addon-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.addon-icon img {
+    width: 20px;
+    height: 20px;
+}
+.purple {
+    background-color: #ede9fe;
+}
+
+.green {
+    background-color: #dcfce7;
+}
+
+.blue {
+    background-color: #dbeafe;
+}
+
+.pink {
+    background-color: #fce7f3;
+}
+
+.orange {
+    background-color: #ffedd5;
+}
+
+.yellow {
+    background-color: #fef9c3;
+}
